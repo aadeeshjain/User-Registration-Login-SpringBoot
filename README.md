@@ -1,6 +1,6 @@
 # User-Registration-Login-SpringBoot
 
-Still in development. Very simple concept to try out using Spring Boot, Data JPA, in-memory (hibernate) db with persistent SQL option.
+Still in development. User Registration using Spring Boot, Data JPA, in-memory H2 db .
 Application Requires/Java Dependencies:
 Java JDK 1.8
 Maven 
