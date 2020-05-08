@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +15,8 @@ h3{
   text-align: center; 
   text-decoration: underline
 }
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
 </style>  
 </head>
