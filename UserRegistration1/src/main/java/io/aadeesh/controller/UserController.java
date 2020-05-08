@@ -59,10 +59,15 @@ public class UserController
 		
 		return mv;
 	}
+	@GetMapping("/dummy")
+	public String dummy()
+	{
+		return "dummy";
+	}
 	
 	@PostMapping("/login")
 	public String login_user(@RequestParam("username") String username,@RequestParam("password") String password,
-			HttpServletRequest request,ModelMap modelMap)
+			HttpSession session,ModelMap modelMap)
 	{
 		
 	User auser=urepo.findByUsernamePassword(username, password);
@@ -74,7 +79,7 @@ public class UserController
 	
 		if(username.equalsIgnoreCase(uname) && password.equalsIgnoreCase(upass)) 
 		{
-			request.getSession().setAttribute("username",username);
+			session.setAttribute("username",username);
 			return "dummy";
 		}
 		else 
@@ -92,10 +97,12 @@ public class UserController
 	}
 	
 	@GetMapping(value = "/logout")
-	public String logout_user(HttpServletRequest request)
+	public String logout_user(HttpSession session)
 	{
-		request.getSession().removeAttribute("username");
-		request.getSession().invalidate();
-		return "redirect:/";
+		session.removeAttribute("username");
+		session.invalidate();
+		return "redirect:/login";
 	}
+	
+	
 }
